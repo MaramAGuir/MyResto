@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../state/store';
 import { increment, decrementAsync } from '../state/reserveCounter/reserveCounterSlice';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -36,23 +38,40 @@ import Specials from './Specials';
 import Services from './Services';
 
 function Home() {
+  const MySwal = withReactContent(Swal);
    
   const reserveCount = useSelector((state: RootState) => state.reserveCounter.value);
   const dispatch: AppDispatch = useDispatch();
 
-  
+  const YourComponent = () => {
+    return (
+      <button onClick={handleReserveClicked} className="Reserve-Button">
+        Reserve Now
+      </button>
+    );
+  };
 
-  function handleReserveClicked() {
-    if (confirm("Are you sure you want to reserve?")) {
-      if (reserveCount < 21) {
-        dispatch(increment());
-      } else {
-        alert('The Reservation List Is Full. Try Again Later.');
+  const handleReserveClicked = () => {
+    MySwal.fire({
+      title: "Are you sure?",
+      text: "Do you want to reserve?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, reserve it!",
+      cancelButtonText: "No, cancel!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        if (reserveCount < 21) {
+          dispatch(increment());
+          MySwal.fire("Reserved!", "Your spot has been reserved.", "success");
+        } else {
+          MySwal.fire("Full!", "The reservation list is full. Try again later.", "error");
+        }
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        MySwal.fire("Cancelled", "That's sad. Please visit us again soon!", "info");
       }
-    } else {
-      alert("That's sad. Please visit us again soon!");
-    }
-  }
+    });
+  };
 
   
 

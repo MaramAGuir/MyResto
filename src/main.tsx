@@ -22,13 +22,7 @@ const LoginHandler = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      dispatch(decrementAsync());
-    }, 10000);
-
-    return () => clearInterval(intervalId);
-  }, [dispatch]);
+  
 
   const handleClose = () => {
     setShowLogin(false);
