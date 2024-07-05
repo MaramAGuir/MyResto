@@ -40,18 +40,7 @@ function Home() {
   const reserveCount = useSelector((state: RootState) => state.reserveCounter.value);
   const dispatch: AppDispatch = useDispatch();
 
-  const [showLogin, setShowLogin] = useState(false);
-
-  useEffect(() => {
-    setShowLogin(true);
-
-    const intervalId = setInterval(() => {
-      dispatch(decrementAsync());
-    }, 10000); 
-
-    // Clear the interval when the component is unmounted
-    return () => clearInterval(intervalId);
-  }, [dispatch]);
+  
 
   function handleReserveClicked() {
     if (confirm("Are you sure you want to reserve?")) {
@@ -65,11 +54,11 @@ function Home() {
     }
   }
 
-  const handleClose = () => setShowLogin(false);
+  
 
   return (
     <>
-      <LoginModal show={showLogin} handleClose={handleClose} />
+      
       <Container className="Top-Container">
         <Row>
           <Col className="Text-Col" md={6}>

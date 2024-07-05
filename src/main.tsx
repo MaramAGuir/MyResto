@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter} from "react-router-dom";
+import { RouterProvider, createBrowserRouter, useNavigate } from "react-router-dom";
 import App from "./pages/App.tsx";
 import "./index.css";
 import Dishes from "./pages/Dishes.tsx";
@@ -10,46 +10,73 @@ import Dessert from "./pages/Dessert.tsx";
 import AllDishes from "./pages/AllDishes.tsx";
 import Location from "./pages/Location.tsx";
 
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { store } from "./state/store.ts";
-//test
+import LoginModal from "./Components/LoginModal.tsx";
+import { decrementAsync } from "./state/reserveCounter/reserveCounterSlice.ts";
+import { AsyncThunkAction, ThunkDispatch, UnknownAction } from "@reduxjs/toolkit";
+
+// Define a component that handles login modal logic
+const LoginHandler = () => {
+  const [showLogin, setShowLogin] = useState(true);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      dispatch(decrementAsync());
+    }, 10000);
+
+    return () => clearInterval(intervalId);
+  }, [dispatch]);
+
+  const handleClose = () => {
+    setShowLogin(false);
+    navigate("/");
+  };
+
+  return <LoginModal show={showLogin} handleClose={handleClose} />;
+};
+
 const router = createBrowserRouter([
   {
-    path : "/" ,
-    element : <App />
-
+    path: "/Login",
+    element: <LoginHandler />,
   },
   {
-    path : "/Dishes",
-    element : <Dishes />,
-    children : [
-      {
-        path : "/Dishes/Main" ,
-        element : <MainDishes />,
-      },
-      {
-        path : "/Dishes/Break_Fast" ,
-        element : <BreakFast />,
-      },
-      {
-        path : "/Dishes/Dessert" ,
-        element : <Dessert />,
-      },
-      {
-        path : "/Dishes/All" ,
-        element : <AllDishes />,
-      },
-    ]
+    path: "/",
+    element: <App />,
   },
   {
-    path : '/Map',
-    element : <Location />
-  }
+    path: "/Dishes",
+    element: <Dishes />,
+    children: [
+      {
+        path: "/Dishes/Main",
+        element: <MainDishes />,
+      },
+      {
+        path: "/Dishes/Break_Fast",
+        element: <BreakFast />,
+      },
+      {
+        path: "/Dishes/Dessert",
+        element: <Dessert />,
+      },
+      {
+        path: "/Dishes/All",
+        element: <AllDishes />,
+      },
+    ],
+  },
+  {
+    path: '/Map',
+    element: <Location />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-
-  <Provider store={store} >
+  <Provider store={store}>
     <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode>
