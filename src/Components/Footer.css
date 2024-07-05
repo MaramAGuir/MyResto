@@ -1,0 +1,35 @@
+.footer-container{
+  margin-top: 10rem;
+}
+
+.logo-image{
+  max-width: 50%;
+}
+.mid-description-footer{
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #4e4d4d;
+}
+.Footer-Media{
+  margin-top: 3%;
+  margin-left: 6.3%;
+  display: flex;
+  align-items: center;
+}
+.social-image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  background-color: #EDFFEF;
+}
+.facebook-container{
+  background-color: #39DB4A;
+}
+.copyright-text{
+  margin-top: 10px;
+  margin-left: 20%;
+}

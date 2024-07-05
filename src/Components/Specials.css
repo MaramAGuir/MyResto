@@ -1,0 +1,55 @@
+
+.special-container{
+  display: flex;
+  
+  flex-direction: column;
+
+  border-radius: 15px;
+  width: 380px;
+  height: 450px;
+  box-shadow: 2px 1px 5px 2px rgb(230, 230, 230);
+}
+
+.special-container:hover {
+  transform: scale(1.1); 
+  filter: saturate(40%); 
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.special-container p{
+  margin-left: 20px;
+  
+}
+.special-image-container{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 12rem;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.special-image{
+  width: 276px;
+}
+.special-name{
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+.special-description{
+  font-size: 12px;
+  color: #757373;
+}
+.special-price{
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.dollar-sign{
+  color: red;
+}

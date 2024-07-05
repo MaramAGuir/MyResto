@@ -1,0 +1,210 @@
+.Top-Container{
+  margin-top: 50px;
+}
+.Text-Col{
+  margin-top: 100px;
+  justify-content: center;
+  text-align: left;
+}
+.Title-Food{
+  color: #39DB4A;
+}
+.Main-Title{
+  margin-top: 80px;
+}
+.Sub-Title{
+  color: #4A4A4A;
+  font-size: medium;
+}
+.B-Div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  text-align: center;
+}
+.B-Div h4{
+  margin-top: 10px;
+  color: #ff000087;
+}
+.B-Div h4 span{
+  font-weight: bolder;
+  color: #39DB4A;
+}
+.element {
+  margin-top: 17px; 
+}
+.Play-B {
+  padding: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 50%; /* Makes the button perfectly elliptical (circle) */
+  background-color: #FFFFFF; /* Background color of the button */
+  border: none; /* Removes border */
+  cursor: pointer; /* Adds pointer cursor */
+  display: flex; /* Allows flex properties to align content */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  box-shadow: 2px 2px 5px -1px rgb(99, 99, 99) ;
+}
+.Play-B img {
+  width: 50%; /* Adjust the size of the Play icon */
+  height: auto;
+  object-fit: contain;
+}
+.Reserve-Button{
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: large;
+  background-color: #39DB4A;
+  padding: 10px 25px;
+  box-shadow: 2px 2px 5px -1px rgb(99, 99, 99) ;
+}
+
+
+
+
+.image-wrapper{
+  display: flex;
+  align-items: center ;
+  justify-content: center ;
+  position: relative;
+  width: fit-content;
+}
+.circle-img{
+  
+  max-width: 70%;
+  height: auto;
+}
+.person-img {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  max-width: 70%;
+  height: auto;
+}
+.spicy-img{
+  position: absolute;
+  top: 29%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  max-width: 35%;
+  height: auto;
+}
+.food-img-I,.food-img-II{
+  position: absolute;
+  max-width: 35%;
+}
+.food-img-I{
+  top: 110%;
+  left: 29%;
+  transform: translate(-50%, -50%);
+}
+.food-img-II{
+  top: 114%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+}
+.categories-container{
+  margin-top: 15rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.top-text{
+  color: #FF6868;
+  letter-spacing: 3px;
+  font-size: large;
+}
+.bottom-text{
+  font-size: 4rem;
+}
+.categories{
+  margin-top: 30px;
+  display: flex;
+  gap: 70px;
+}
+.special-text-container{
+  width: 40%;
+  margin-top: 150px;
+  margin-left: 115px;
+}
+.specials{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.Mid-Container{
+  margin-top: 10%;
+}
+.mid-text-col{
+  padding-left: 60px;
+}
+.chef{
+  top: 50% !important;
+}
+.mid-text{
+  font-size: 3rem;
+}
+.mid-description{
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #4e4d4d;
+}
+.feedback-container{
+  display: flex;
+  justify-content: space-between;
+}
+.feedback-text-container{
+  margin-left: 40% ;
+}
+.feedback-text{
+  font-size: 30px;
+  margin-bottom: 0;
+}
+.feedback-bottom {
+  display: flex;
+  align-items: center; 
+}
+
+.feedback-bottom img {
+  margin-right: 8px; 
+}
+
+.feedback-text-rating {
+  margin: 0 4px;
+}
+
+.feedback-rating-text {
+  color: #5f5d5d;
+  margin: 0 7px;
+}
+.midlow-container{
+  margin-top: 250px;
+}
+.midlow-text-col{
+  margin-top: 0 !important;
+}
+.Explore-Button{
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: large;
+  margin-top: 30px;
+  margin-left: 5px;
+  background-color: #39DB4A;
+  padding: 18px 45px;
+  box-shadow: 2px 2px 5px -1px rgb(99, 99, 99) ;
+}
+.service-col-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr);   
+  gap: 50px;
+}

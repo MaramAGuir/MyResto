@@ -1,0 +1,9 @@
+.dishes-categories{
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.dishes-categories .categorie-container{
+  box-shadow: none;
+}

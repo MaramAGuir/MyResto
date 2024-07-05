@@ -1,0 +1,79 @@
+@media screen and (max-width: 992px) {
+
+  .me-auto{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  #responsive-navbar-nav{
+    margin-top: -10px;
+    
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px black;
+  }
+}
+
+
+
+.nav-container{
+  position: fixed  ;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff !important;
+  box-shadow: 1px 1px 4px 1px rgb(106, 105, 105);
+  height: 48px;
+  z-index: 1000;
+  
+}
+
+.me-auto{
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100%;
+  gap: 40px;
+}
+
+.me-auto *{
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+}
+
+.me-auto *:hover {
+  color: #39DB4A !important;
+}
+
+
+
+.right-nav{
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-around;
+  
+  gap: 10px;
+}
+
+.router-link{
+  text-decoration: none;
+}
+
+.basket-container{
+  margin-right: 0;
+  position: relative;
+}
+.basket-icon{
+  width: 150%;
+}
+.basket-text{
+  position: absolute;
+  top: 60%;
+  left: -30%;
+  background-color: #39DB4A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

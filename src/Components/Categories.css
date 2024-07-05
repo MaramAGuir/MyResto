@@ -1,0 +1,37 @@
+.categorie-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 15px;
+  padding: 25px 60px;
+  box-shadow: 2px 1px 5px 2px rgb(207, 206, 206);
+}
+
+.categorie-container:hover {
+  transform: scale(1.1); 
+  filter: saturate(40%); 
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.categorie-image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C1F1C6;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+}
+.categorie-image{
+  max-width: 100%;
+}
+.categorie-name{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.categorie-stock{
+  font-size: 12px;
+  color: #757373;
+}
