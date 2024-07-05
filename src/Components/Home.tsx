@@ -36,18 +36,18 @@ import Specials from './Specials';
 import Services from './Services';
 
 function Home() {
+   
   const reserveCount = useSelector((state: RootState) => state.reserveCounter.value);
   const dispatch: AppDispatch = useDispatch();
 
   const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
-    setShowLogin(true); // Show the modal when the component mounts
+    setShowLogin(true);
 
-    // Set up the interval to decrease the reserve count every minute
     const intervalId = setInterval(() => {
       dispatch(decrementAsync());
-    }, 10000); // 60000 milliseconds = 1 minute
+    }, 10000); 
 
     // Clear the interval when the component is unmounted
     return () => clearInterval(intervalId);
@@ -74,7 +74,7 @@ function Home() {
         <Row>
           <Col className="Text-Col" md={6}>
             <h1 className="Title Main-Title">
-              Dive into Delights Of Delectable
+              Dive into Delights Of Delectable 
               <span className="Title-Food">Food</span>
             </h1>
             <h2 className="Title Sub-Title">
