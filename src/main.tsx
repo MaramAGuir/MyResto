@@ -12,7 +12,7 @@ import Location from "./pages/Location.tsx";
 
 import { Provider } from "react-redux";
 import { store } from "./state/store.ts";
-
+//test
 const router = createBrowserRouter([
   {
     path : "/" ,
